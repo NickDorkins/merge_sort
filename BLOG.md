@@ -37,16 +37,30 @@ ALGORITHM Merge(left, right, arr)
     else
        set remaining entries in arr to remaining values in left
 
+
+MergeSort([8,4,23,42,16,15])
 ```
 
-Merge sort function takes in a list
+Merge sort function takes in an unordered list
 
-It starts by assigning a variable to the length of the list divided by 2, this finds the midpoint of the list.
+We start by assigning the list length to the variable `"n"`
+
+We then assign a variable to the length of the list divided by 2, this finds the midpoint of the list.
+
+> Think about how to `round()` the numbers that return as a float value for the midpoint
 
 Now we assign a left and a right list variable to split the list into 2 separate lists.
 
-   - left is assigned to look at index 0 through the midpoint
-    - right is assigned to look at the midpoint index through the end of the list
+- **left** is assigned to look at index 0 through the midpoint
+- **right** is assigned to look at the midpoint index through the end of the list
 
-Now we call merge_sort() on both left and right to break them down into their own separate lists
+Now we call merge_sort() on both left and right to break them down into their own separate lists, creating a total of 4 lists
 
+When dealing with odd length lists the new list will be imbalance, in this example we have a list of 3 values being split into 2 lists. 
+
+| PASS | BEFORE | LEFT | RIGHT | 
+| --- | --- | --- | --- |
+| 1 | [8,4,23,42,16,15] | [4,8,23] | [42,16,15] | 
+| 2 | [4,8,23] & [42,16,15] | [4,8] [23] | [42,16] [15] | 
+| 3 | [4,8] & [42,16] | [4] & [8] | [42] & [16] | 
+| Final Lists | [8], [4], [23], [42], [16], [15]
